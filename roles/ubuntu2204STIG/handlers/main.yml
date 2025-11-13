@@ -3,8 +3,8 @@
 - name: auditd_restart
   command: /usr/sbin/service auditd restart
 - name: ssh_restart
-  service:
-    name: sshd
+  ansible.builtin.systemd_service:
+    name: ssh
     state: restarted
 - name: rsyslog_restart
   service:
